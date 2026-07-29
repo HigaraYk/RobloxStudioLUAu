@@ -1,0 +1,11 @@
+-- Este script será colocado no objeto ao qual você quer que te mate
+
+local part = script.Parent 
+
+part.Touched:Connect(function(hit) -- Ao tocar no objeto
+	if hit.Parent:FindFirstChild("Humanoid") then
+		local char = hit.Parent
+		local hum = char.Humanoid
+		hum:TakeDamage(100)
+	end
+end)
